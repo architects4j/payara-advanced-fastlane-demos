@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.fundamentals;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;

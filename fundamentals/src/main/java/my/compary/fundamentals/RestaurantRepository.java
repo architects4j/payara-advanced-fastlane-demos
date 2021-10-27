@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.fundamentals;
 
 import java.util.Collection;
 import java.util.Optional;

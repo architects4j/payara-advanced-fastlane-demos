@@ -1,7 +1,7 @@
-package my.compary.restaurant;
+package my.compary.fundamentals;
 
 
-import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
+import my.compary.fundamentals.infra.FieldPropertyVisibilityStrategy;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbVisibility;

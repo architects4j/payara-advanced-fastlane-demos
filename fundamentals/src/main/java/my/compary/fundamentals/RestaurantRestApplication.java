@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.fundamentals;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ApplicationPath;

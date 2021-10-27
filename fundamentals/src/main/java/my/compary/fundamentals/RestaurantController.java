@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.fundamentals;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
