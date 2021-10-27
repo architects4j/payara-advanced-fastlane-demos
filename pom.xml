@@ -9,5 +9,6 @@
   
   <modules>
     <module>fundamentals</module>
+    <module>cdi</module>
   </modules>
 </project>
