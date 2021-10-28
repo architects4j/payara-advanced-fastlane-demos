@@ -1,4 +1,4 @@
-package my.compary.tolerance.resilient;
+package my.compary.tolerance;
 
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
