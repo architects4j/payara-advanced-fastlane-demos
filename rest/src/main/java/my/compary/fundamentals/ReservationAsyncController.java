@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutorService;
 
 @RequestScoped
 @Path("reservations/async")
-public class ReservationController {
+public class ReservationAsyncController {
 
     @Inject
     private ExecutorService executorService;
