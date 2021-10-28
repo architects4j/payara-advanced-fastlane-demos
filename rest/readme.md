@@ -8,47 +8,20 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
     mvn clean package
 ```
-This will create an executable jar file **fundamentals-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
+This will create an executable jar file **reservation-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
 ```
-    java -jar target/fundamentals-microbundle.jar
+    java -jar target/reservation-microbundle.jar
 ```
 
 To execute the tests:
 
 ```
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", 
-"expires": "2025-12-03", "ingredients": [{"name": "water", "unit": "L", "quantity": 2}]}'
 
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "coconut-water", "description": "Coconut water is the clear liquid inside coconuts.", "type": "BEVERAGE", 
-"expires": "2025-12-03", "ingredients": [{"name": "coconut water", "unit": "L", "quantity": 1}]}'
+curl --location --request GET 'http://localhost:8080/reservations/cities'
 
-
-curl --location --request GET 'http://localhost:8080/restaurants/water'
-
-curl --location --request GET 'http://localhost:8080/restaurants'
+curl --location --request GET 'http://localhost:8080/reservations/countries'
 ```
-
-Validations tests:
-
-```
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2030-12-03"}'
-
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2000-12-03"}'
-
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "w", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2025-12-03"}'
-```
-
 
 
 ## Specification examples
