@@ -13,7 +13,6 @@ public class App {
             orchestra.percussion();
             orchestra.keyboard();
             orchestra.string();
-            orchestra.solo();
             orchestra.allSound();
 
         }

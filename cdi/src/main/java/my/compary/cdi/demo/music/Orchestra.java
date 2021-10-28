@@ -27,8 +27,6 @@ public class Orchestra {
     @Named("string")
     private Instrument string;
 
-    @Inject
-    private Instrument solo;
 
     @Inject
     @Any
@@ -44,11 +42,6 @@ public class Orchestra {
 
     public void keyboard() {
         LOGGER.info("The keyboard's sound: " + this.keyboard.sound());
-    }
-
-
-    public void solo() {
-        LOGGER.info("The solo's sound: " + this.keyboard.sound());
     }
 
     public void allSound() {
