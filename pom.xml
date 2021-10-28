@@ -11,5 +11,6 @@
     <module>fundamentals</module>
     <module>cdi</module>
     <module>rest</module>
+    <module>tolerance</module>
   </modules>
 </project>
