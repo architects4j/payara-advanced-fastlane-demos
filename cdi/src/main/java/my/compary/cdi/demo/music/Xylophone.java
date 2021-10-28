@@ -1,6 +1,9 @@
 package my.compary.cdi.demo.music;
 
-@MusicalInstrument(InstrumentType.PERCUSSION)
+import javax.inject.Named;
+
+//@MusicalInstrument(InstrumentType.PERCUSSION)
+@Named("percussion")
 class Xylophone implements Instrument {
     @Override
     public String sound() {

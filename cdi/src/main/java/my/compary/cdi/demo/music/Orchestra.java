@@ -4,6 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Any;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -13,14 +14,17 @@ public class Orchestra {
     private static final Logger LOGGER = Logger.getLogger(Orchestra.class.getName());
 
     @Inject
-    @MusicalInstrument(InstrumentType.PERCUSSION)
+    //@MusicalInstrument(InstrumentType.PERCUSSION)
+    @Named("percussion")
     private Instrument percussion;
     @Inject
-    @MusicalInstrument(InstrumentType.KEYBOARD)
+    //@MusicalInstrument(InstrumentType.KEYBOARD)
+    @Named("keyboard")
     private Instrument keyboard;
 
     @Inject
-    @MusicalInstrument(InstrumentType.STRING)
+    //@MusicalInstrument(InstrumentType.STRING)
+    @Named("string")
     private Instrument string;
 
     @Inject

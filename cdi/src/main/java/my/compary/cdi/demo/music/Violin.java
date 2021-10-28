@@ -1,6 +1,9 @@
 package my.compary.cdi.demo.music;
 
-@MusicalInstrument(InstrumentType.STRING)
+import javax.inject.Named;
+
+//@MusicalInstrument(InstrumentType.STRING)
+@Named("string")
 class Violin implements Instrument {
     @Override
     public String sound() {
