@@ -25,4 +25,13 @@ public class Reservation {
     public LocalDate getStart() {
         return start;
     }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "to='" + to + '\'' +
+                ", from='" + from + '\'' +
+                ", start=" + start +
+                '}';
+    }
 }
