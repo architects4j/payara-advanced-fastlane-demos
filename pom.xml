@@ -10,5 +10,6 @@
   <modules>
     <module>fundamentals</module>
     <module>cdi</module>
+    <module>rest</module>
   </modules>
 </project>
