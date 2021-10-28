@@ -6,6 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 @StartUp
 public class StartupBean {
+
     @PostConstruct
     public void onStartup() {
         System.out.println("Application starting up.");
