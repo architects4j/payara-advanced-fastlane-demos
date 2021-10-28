@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 @ApplicationScoped
 public class ResilienceController {
 
-    @Fallback(fallbackMethod = "fallback") // better use FallbackHandler
+    @Fallback(ErrorMessage.class) // better use FallbackHandler
     @Timeout(500)
     @GET
     public String checkTimeout() {
@@ -21,9 +21,5 @@ public class ResilienceController {
             //
         }
         return "Never from normal processing";
-    }
-
-    public String fallback() {
-        return "Fallback answer due to timeout";
     }
 }
