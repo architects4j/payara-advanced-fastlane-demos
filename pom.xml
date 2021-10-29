@@ -12,5 +12,6 @@
     <module>cdi</module>
     <module>rest</module>
     <module>tolerance</module>
+    <module>jpa</module>
   </modules>
 </project>
