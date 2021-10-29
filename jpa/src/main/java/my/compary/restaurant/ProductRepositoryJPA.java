@@ -11,14 +11,14 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 @Stateless
-public class RestaurantRepositoryJPA extends AbstractFacade<Product> implements RestaurantRepository {
+public class ProductRepositoryJPA extends AbstractFacade<Product> implements ProductRepository {
 
-    private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryJPA.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ProductRepositoryJPA.class.getName());
 
     @PersistenceContext(unitName = "JPADatasourceExamplePU")
     private EntityManager entityManager;
 
-    public RestaurantRepositoryJPA() {
+    public ProductRepositoryJPA() {
         super(Product.class);
     }
 

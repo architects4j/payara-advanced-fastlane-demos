@@ -3,7 +3,7 @@ package my.compary.restaurant;
 import java.util.Collection;
 import java.util.Optional;
 
-public interface RestaurantRepository {
+public interface ProductRepository {
     Collection<Product> getAll();
 
     Product save(Product item);
