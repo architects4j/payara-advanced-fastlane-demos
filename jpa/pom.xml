@@ -13,6 +13,9 @@
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.7</payaraVersion>
         <final.name>restaurant</final.name>
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+        <maven.compile.version>3.8.1</maven.compile.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,6 +40,11 @@
             <groupId>org.javamoney.moneta</groupId>
             <artifactId>moneta-core</artifactId>
             <version>1.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -64,6 +72,30 @@
                         </executions>
                         <configuration>
                             <payaraVersion>${payaraVersion}</payaraVersion>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${maven.compile.version}</version>
+                        <configuration>
+                            <target>${maven.compiler.target}</target>
+                            <source>${maven.compiler.source}</source>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.mapstruct</groupId>
+                                    <artifactId>mapstruct-processor</artifactId>
+                                    <version>${org.mapstruct.version}</version>
+                                </path>
+                            </annotationProcessorPaths>
+                            <compilerArgs>
+                                <compilerArg>
+                                    -Amapstruct.suppressGeneratorTimestamp=true
+                                </compilerArg>
+                                <compilerArg>
+                                    -Amapstruct.suppressGeneratorVersionInfoComment=true
+                                </compilerArg>
+                            </compilerArgs>
                         </configuration>
                     </plugin>
                 </plugins>
