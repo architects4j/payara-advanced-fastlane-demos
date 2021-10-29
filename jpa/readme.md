@@ -34,20 +34,18 @@ java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.use
 To execute the tests:
 
 ```
-curl --location --request POST 'http://localhost:8080/restaurants' \
+curl --location --request POST 'http://localhost:8080/products' \
 --header 'Content-Type: application/json' \
---data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", 
-"expires": "2025-12-03", "ingredients": [{"name": "water", "unit": "L", "quantity": 2}]}'
+--data-raw '{"name": "Banana", "description": "A banana fruit", "expires": "2025-12-03", "price": "USD 10"}'
 
-curl --location --request POST 'http://localhost:8080/restaurants' \
+
+curl --location --request POST 'http://localhost:8080/products' \
 --header 'Content-Type: application/json' \
---data-raw '{"name": "coconut-water", "description": "Coconut water is the clear liquid inside coconuts.", "type": "BEVERAGE", 
-"expires": "2025-12-03", "ingredients": [{"name": "coconut water", "unit": "L", "quantity": 1}]}'
+--data-raw '{"name": "Apple", "description": "An apple fruit", "expires": "2025-12-03", "price": "USD 15"}'
 
 
-curl --location --request GET 'http://localhost:8080/restaurants/water'
+curl --location --request GET 'http://localhost:8080/products/'
 
-curl --location --request GET 'http://localhost:8080/restaurants'
 ```
 
 
