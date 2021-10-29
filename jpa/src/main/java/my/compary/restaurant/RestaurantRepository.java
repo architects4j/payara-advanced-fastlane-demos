@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.Optional;
 
 public interface RestaurantRepository {
-    Collection<Item> getAll();
+    Collection<Product> getAll();
 
-    Item save(Item item);
+    Product save(Product item);
 
-    Optional<Item> findById(String id);
+    Optional<Product> findById(String id);
 
     void deleteById(String id);
 }

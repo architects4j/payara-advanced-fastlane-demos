@@ -15,7 +15,6 @@ import javax.validation.Valid;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
@@ -52,7 +51,7 @@ public class RestaurantController {
                     schema = @Schema(implementation = Collection.class,
                             readOnly = true, description = "the items",
                             required = true, name = "items")))
-    public Collection<Item> getAll() {
+    public Collection<Product> getAll() {
         return repository.getAll();
     }
 
@@ -65,8 +64,8 @@ public class RestaurantController {
     @Tag(name = "BETA", description = "This API is currently in beta state")
     @APIResponse(description = "The Item",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
-                    schema = @Schema(implementation = Item.class)))
-    public Item findById(@Parameter(description = "The item ID", required = true, example = "water",
+                    schema = @Schema(implementation = Product.class)))
+    public Product findById(@Parameter(description = "The item ID", required = true, example = "water",
             schema = @Schema(type = SchemaType.STRING))
                          @PathParam("id") String id) {
         return this.repository.findById(id).orElseThrow(
@@ -80,7 +79,7 @@ public class RestaurantController {
     @Tag(name = "BETA", description = "This API is currently in beta state")
     public Response insert(@RequestBody(description = "Create a new Item.",
             content = @Content(mediaType = "application/json",
-                    schema = @Schema(implementation = Item.class))) @Valid Item item) {
+                    schema = @Schema(implementation = Product.class))) @Valid Product item) {
         return Response.status(Response.Status.CREATED)
                 .entity(repository.save(item))
                 .build();
