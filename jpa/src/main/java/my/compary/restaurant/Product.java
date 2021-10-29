@@ -38,6 +38,14 @@ public class Product {
     @Convert(converter = MoneyConverter.class)
     private MonetaryAmount price;
 
+    public Product(Long id, String name, String description, LocalDate expires, MonetaryAmount price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.expires = expires;
+        this.price = price;
+    }
+
     public void update(Product item, ProductRepository repository) {
         this.description = item.description;
         this.expires = item.expires;
@@ -91,5 +99,49 @@ public class Product {
                 ", expires=" + expires +
                 ", price=" + price +
                 '}';
+    }
+
+    public static ProductBuilder builder() {
+        return new ProductBuilder();
+    }
+
+    public static class ProductBuilder {
+        private Long id;
+        private String name;
+        private String description;
+        private LocalDate expires;
+        private MonetaryAmount price;
+
+        private ProductBuilder() {
+        }
+
+        public ProductBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public ProductBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public ProductBuilder description(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public ProductBuilder expires(LocalDate expires) {
+            this.expires = expires;
+            return this;
+        }
+
+        public ProductBuilder price(MonetaryAmount price) {
+            this.price = price;
+            return this;
+        }
+
+        public Product build() {
+            return new Product(id, name, description, expires, price);
+        }
     }
 }
