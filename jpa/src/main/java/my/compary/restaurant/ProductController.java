@@ -23,19 +23,19 @@ import javax.ws.rs.core.Response;
 import java.util.Collection;
 
 @RequestScoped
-@Path("restaurants")
-public class RestaurantController {
+@Path("products")
+public class ProductController {
 
     private ProductRepository repository;
 
     /**
      * @Deprecated CDI only
      */
-    RestaurantController() {
+    ProductController() {
     }
 
     @Inject
-    RestaurantController(ProductRepository repository) {
+    ProductController(ProductRepository repository) {
         this.repository = repository;
     }
 
