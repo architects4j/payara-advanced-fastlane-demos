@@ -9,5 +9,5 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath("/")
 @ApplicationScoped
-public class RestaurantRestApplication extends Application {
+public class ProductRestApplication extends Application {
 }

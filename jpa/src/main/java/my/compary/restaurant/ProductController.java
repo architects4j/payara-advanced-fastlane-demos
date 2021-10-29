@@ -41,23 +41,23 @@ public class ProductController {
 
     //TODO don't worried about pagination
     @GET
-    @Operation(summary = "Get all items", description = "Returns all available items at the restaurant")
+    @Operation(summary = "Get all products", description = "Returns all available products at the restaurant")
     @APIResponse(responseCode = "500", description = "Server unavailable")
-    @APIResponse(responseCode = "200", description = "The items")
+    @APIResponse(responseCode = "200", description = "The products")
     @Tag(name = "BETA", description = "This API is currently in beta state")
-    @APIResponse(description = "The items",
+    @APIResponse(description = "The products",
             responseCode = "200",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
                     schema = @Schema(implementation = Collection.class,
-                            readOnly = true, description = "the items",
-                            required = true, name = "items")))
+                            readOnly = true, description = "the products",
+                            required = true, name = "products")))
     public Collection<Product> getAll() {
         return repository.getAll();
     }
 
     @GET
     @Path("{id}")
-    @Operation(summary = "Find an item by id", description = "Find an item by id")
+    @Operation(summary = "Find an product by id", description = "Find an product by id")
     @APIResponse(responseCode = "200", description = "The item")
     @APIResponse(responseCode = "404", description = "When the id does not exist")
     @APIResponse(responseCode = "500", description = "Server unavailable")
@@ -65,11 +65,11 @@ public class ProductController {
     @APIResponse(description = "The Item",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
                     schema = @Schema(implementation = Product.class)))
-    public Product findById(@Parameter(description = "The item ID", required = true, example = "water",
+    public Product findById(@Parameter(description = "The product ID", required = true, example = "water",
             schema = @Schema(type = SchemaType.STRING))
                          @PathParam("id") String id) {
         return this.repository.findById(id).orElseThrow(
-                () -> new WebApplicationException("There is no item with the id " + id, Response.Status.NOT_FOUND));
+                () -> new WebApplicationException("There is no product with the id " + id, Response.Status.NOT_FOUND));
     }
 
     @POST
@@ -87,7 +87,7 @@ public class ProductController {
 
     @DELETE
     @Path("{id}")
-    @Operation(summary = "Delete an item by ID", description = "Delete an item by ID")
+    @Operation(summary = "Delete an product by ID", description = "Delete an product by ID")
     @APIResponse(responseCode = "200", description = "When deletes the item")
     @APIResponse(responseCode = "500", description = "Server unavailable")
     @Tag(name = "BETA", description = "This API is currently in beta state")
