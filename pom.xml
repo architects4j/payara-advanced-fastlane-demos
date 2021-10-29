@@ -13,5 +13,6 @@
     <module>rest</module>
     <module>tolerance</module>
     <module>jpa</module>
+    <module>microstream</module>
   </modules>
 </project>
