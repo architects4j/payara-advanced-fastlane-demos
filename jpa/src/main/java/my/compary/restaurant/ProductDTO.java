@@ -26,16 +26,19 @@ public class ProductDTO {
     @Size(min = 3, max = 20, message = "The name size should be between 3 and 10 chars")
     private String name;
 
-    @Schema(required = true, name = "description", description = "The item description", example = "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.")
+    @Schema(required = true, name = "description", description = "The product description", example = "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.")
     @NotBlank
     @Size(min = 10, max = 100, message = "The description should be between 10 and 100 chars")
     private String description;
 
-    @Column(columnDefinition = "DATE")
-    @Schema(required = true, name = "expires", description = "When the item expires", example = "2025-12-03")
+    @Schema(required = true, name = "expires", description = "When the product expires", example = "2025-12-03")
     @Future(message = "It is not possible to save an expired item")
     @NotNull
     private LocalDate expires;
+
+    @Schema(required = true, name = "price", description = "The product price", example = "USD 10")
+    @NotNull
+    private String price;
 
 
     public Long getId() {
@@ -68,5 +71,24 @@ public class ProductDTO {
 
     public void setExpires(LocalDate expires) {
         this.expires = expires;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", expires=" + expires +
+                ", price='" + price + '\'' +
+                '}';
     }
 }
