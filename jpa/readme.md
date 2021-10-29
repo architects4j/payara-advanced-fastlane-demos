@@ -8,12 +8,12 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
     mvn clean package
 ```
-This will create an executable jar file **restaurant-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
+This will create an executable jar file **product-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
 
 ```shell
 mvn clean package
-java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.user=postgres -Dserver.password=password target/restaurant-microbundle.jar 
+java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.user=postgres -Dserver.password=password target/product-microbundle.jar 
 ```
 
 
@@ -48,22 +48,6 @@ curl --location --request POST 'http://localhost:8080/restaurants' \
 curl --location --request GET 'http://localhost:8080/restaurants/water'
 
 curl --location --request GET 'http://localhost:8080/restaurants'
-```
-
-Validations tests:
-
-```
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2030-12-03"}'
-
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2000-12-03"}'
-
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "w", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2025-12-03"}'
 ```
 
 
