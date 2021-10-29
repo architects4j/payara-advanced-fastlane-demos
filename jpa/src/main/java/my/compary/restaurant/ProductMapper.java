@@ -11,11 +11,11 @@ import java.time.LocalDate;
 @Mapper(componentModel = "cdi")
 public interface ProductMapper {
 
-    @Mapping(source = "salary", target = "salary", qualifiedByName = "moneyString")
+    @Mapping(source = "price", target = "price", qualifiedByName = "moneyString")
     @Mapping(source = "expires", target = "expires", qualifiedByName = "localDateString")
     ProductDTO toDTO(Product product);
 
-    @Mapping(source = "salary", target = "salary", qualifiedByName = "money")
+    @Mapping(source = "price", target = "price", qualifiedByName = "money")
     @Mapping(source = "expires", target = "expires", qualifiedByName = "localDate")
     Product toEntity(ProductDTO dto);
 
