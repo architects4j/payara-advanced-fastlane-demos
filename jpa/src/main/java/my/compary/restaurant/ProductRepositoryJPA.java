@@ -35,7 +35,7 @@ public class ProductRepositoryJPA extends AbstractFacade<Product> implements Pro
     @Override
     public Product save(Product item) {
         Objects.requireNonNull(item, "An item is required");
-        Optional<Product> itemOptional = findById(item.getName());
+        Optional<Product> itemOptional = findById(item.getId());
         if (itemOptional.isPresent()) {
             getEntityManager().merge(item);
         } else {
@@ -46,13 +46,13 @@ public class ProductRepositoryJPA extends AbstractFacade<Product> implements Pro
     }
 
     @Override
-    public Optional<Product> findById(String id) {
+    public Optional<Product> findById(Long id) {
         LOGGER.info("Finding the item by id: " + id);
         return Optional.ofNullable(super.find(id));
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
         Optional<Product> item = findById(id);
         item.ifPresent((i) -> super.remove(i));
     }

@@ -26,7 +26,7 @@ import java.util.Collection;
 @Path("products")
 public class ProductController {
 
-    private ProductRepository repository;
+    private ProductService service;
 
     /**
      * @Deprecated CDI only
@@ -35,8 +35,8 @@ public class ProductController {
     }
 
     @Inject
-    ProductController(ProductRepository repository) {
-        this.repository = repository;
+    ProductController(ProductService service) {
+        this.service = service;
     }
 
     //TODO don't worried about pagination
@@ -51,8 +51,8 @@ public class ProductController {
                     schema = @Schema(implementation = Collection.class,
                             readOnly = true, description = "the products",
                             required = true, name = "products")))
-    public Collection<Product> getAll() {
-        return repository.getAll();
+    public Collection<ProductDTO> getAll() {
+        return service.getAll();
     }
 
     @GET
@@ -64,11 +64,11 @@ public class ProductController {
     @Tag(name = "BETA", description = "This API is currently in beta state")
     @APIResponse(description = "The Item",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
-                    schema = @Schema(implementation = Product.class)))
-    public Product findById(@Parameter(description = "The product ID", required = true, example = "water",
-            schema = @Schema(type = SchemaType.STRING))
-                         @PathParam("id") String id) {
-        return this.repository.findById(id).orElseThrow(
+                    schema = @Schema(implementation = ProductDTO.class)))
+    public ProductDTO findById(@Parameter(description = "The product ID", required = true, example = "water",
+            schema = @Schema(type = SchemaType.INTEGER))
+                         @PathParam("id") Long id) {
+        return this.service.findById(id).orElseThrow(
                 () -> new WebApplicationException("There is no product with the id " + id, Response.Status.NOT_FOUND));
     }
 
@@ -79,9 +79,9 @@ public class ProductController {
     @Tag(name = "BETA", description = "This API is currently in beta state")
     public Response insert(@RequestBody(description = "Create a new Item.",
             content = @Content(mediaType = "application/json",
-                    schema = @Schema(implementation = Product.class))) @Valid Product item) {
+                    schema = @Schema(implementation = ProductDTO.class))) @Valid ProductDTO item) {
         return Response.status(Response.Status.CREATED)
-                .entity(repository.save(item))
+                .entity(service.save(item))
                 .build();
     }
 
@@ -91,8 +91,8 @@ public class ProductController {
     @APIResponse(responseCode = "200", description = "When deletes the item")
     @APIResponse(responseCode = "500", description = "Server unavailable")
     @Tag(name = "BETA", description = "This API is currently in beta state")
-    public Response delete(@PathParam("id") String id) {
-        this.repository.deleteById(id);
+    public Response delete(@PathParam("id") Long id) {
+        this.service.deleteById(id);
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 
