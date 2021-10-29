@@ -38,7 +38,10 @@ public class Product {
     @Convert(converter = MoneyConverter.class)
     private MonetaryAmount price;
 
-    public Product(Long id, String name, String description, LocalDate expires, MonetaryAmount price) {
+    Product() {
+    }
+
+    private Product(Long id, String name, String description, LocalDate expires, MonetaryAmount price) {
         this.id = id;
         this.name = name;
         this.description = description;
