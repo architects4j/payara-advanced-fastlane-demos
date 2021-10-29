@@ -33,16 +33,15 @@ public class ProductRepositoryJPA extends AbstractFacade<Product> implements Pro
     }
 
     @Override
-    public Product save(Product item) {
-        Objects.requireNonNull(item, "An item is required");
-        Optional<Product> itemOptional = findById(item.getId());
-        if (itemOptional.isPresent()) {
-            getEntityManager().merge(item);
+    public Product save(Product product) {
+        Objects.requireNonNull(product, "A product is required");
+        if (Objects.nonNull(product.getId())) {
+            getEntityManager().merge(product);
         } else {
-            getEntityManager().persist(item);
+            getEntityManager().persist(product);
         }
-        LOGGER.info("The data was updated: " + item);
-        return item;
+        LOGGER.info("The data was updated: " + product);
+        return product;
     }
 
     @Override
