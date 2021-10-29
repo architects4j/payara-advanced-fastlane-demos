@@ -8,7 +8,7 @@ public interface ProductRepository {
 
     Product save(Product item);
 
-    Optional<Product> findById(String id);
+    Optional<Product> findById(Long id);
 
-    void deleteById(String id);
+    void deleteById(Long id);
 }
