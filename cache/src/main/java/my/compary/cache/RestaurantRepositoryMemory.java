@@ -1,9 +1,11 @@
 package my.compary.cache;
 
+import javax.cache.Cache;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -13,15 +15,15 @@ class RestaurantRepositoryMemory implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryMemory.class.getName());
 
-    private Map<String, Item> data;
-
-    public RestaurantRepositoryMemory() {
-        this.data = new HashMap<>();
-    }
+    @Inject
+    private Cache<String, Item> data;
 
     @Override
     public Collection<Item> getAll() {
-        return data.values();
+        Collection<Item> items = new ArrayList<>();
+        Iterator<Cache.Entry<String, Item>> entities = this.data.iterator();
+        entities.forEachRemaining(e -> items.add(e.getValue()));
+        return items;
     }
 
     @Override
