@@ -75,3 +75,24 @@ jlink --add-modules java.base,java.logging \
     --no-man-pages --no-header-files --compress=2 \
     --output jlink-image
 ``
+
+
+```shell
+FROM openjdk:11-jdk as build
+MAINTAINER Aphrodite and Athena <aphrodite@athena.com>
+
+RUN jlink --add-modules java.base,java.logging,java.xml \
+    --module-path jmods:/usr/share/myservice/application.jar \
+    --no-man-pages --no-header-files --compress=2 \
+    --output jlink-image
+
+FROM debian:stretch-slim
+COPY --from=build jlink-image /opt/java
+ADD target/application-microbundle.jar /usr/share/myservice/application.jar
+ENV JAVA_HOME=/opt/java
+ENV PATH "${JAVA_HOME}/bin:${PATH}"
+CMD ["java", "-jar", "/usr/share/myservice/myservice.jar"]
+# Add Maven dependencies (not shaded into the artifact; Docker-cached)
+#ADD target/lib           /usr/share/myservice/lib
+ADD target/application-microbundle.jar /usr/share/myservice/myservice.jar
+``
