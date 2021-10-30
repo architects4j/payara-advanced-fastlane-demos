@@ -16,5 +16,6 @@
     <module>microstream</module>
     <module>cache</module>
     <module>nosql</module>
+    <module>docker</module>
   </modules>
 </project>
