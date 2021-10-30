@@ -66,3 +66,12 @@ Let's go to the Postman to test your API. The first step is to install the appli
 
 It works like magic, [don't forget to set the variables inside Postman](https://learning.postman.com/docs/sending-requests/variables/).
 
+
+## Extra
+
+```shell
+jlink --add-modules java.base,java.logging \
+    --module-path jmods:/usr/share/myservice/application.jar \
+    --no-man-pages --no-header-files --compress=2 \
+    --output jlink-image
+``
