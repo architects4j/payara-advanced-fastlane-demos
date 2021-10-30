@@ -17,5 +17,6 @@
     <module>cache</module>
     <module>nosql</module>
     <module>docker</module>
+    <module>test</module>
   </modules>
 </project>
