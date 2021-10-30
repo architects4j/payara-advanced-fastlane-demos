@@ -8,10 +8,9 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
     mvn clean package
 ```
-This will create an executable jar file **application-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
 ```
-    java -jar target/application-microbundle.jar
+    docker run -p 8080:8080 my/company/docker:1.0-SNAPSHOT
 ```
 
 To execute the tests:
