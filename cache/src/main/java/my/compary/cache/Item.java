@@ -9,6 +9,7 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.Objects;
 
 @Schema(name = "Item", description = "The entity that represents Item in a restaurant")
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
-public class Item {
+public class Item implements Serializable {
 
     @Schema(required = true, name = "name", description = "The item name", example = "water")
     @NotBlank

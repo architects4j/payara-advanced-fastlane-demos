@@ -7,10 +7,11 @@ import javax.json.bind.annotation.JsonbVisibility;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Schema(name = "Ingredient", description = "The ingredient of an item")
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
-public class Ingredient {
+public class Ingredient implements Serializable {
 
     @Schema(required = true, name = "name", description = "The ingredient name", example = "water")
     @NotBlank
