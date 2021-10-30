@@ -14,5 +14,6 @@
     <module>tolerance</module>
     <module>jpa</module>
     <module>microstream</module>
+    <module>cache</module>
   </modules>
 </project>
