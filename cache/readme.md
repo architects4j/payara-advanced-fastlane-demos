@@ -8,10 +8,10 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
     mvn clean package
 ```
-This will create an executable jar file **fundamentals-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
+This will create an executable jar file **cache-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
 ```
-    java -jar target/fundamentals-microbundle.jar
+    java -jar target/cache-microbundle.jar
 ```
 
 To execute the tests:
