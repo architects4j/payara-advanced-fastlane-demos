@@ -77,6 +77,7 @@ jlink --add-modules java.base,java.logging \
 ``
 
 
+
 ```shell
 FROM openjdk:11-jdk as build
 MAINTAINER Aphrodite and Athena <aphrodite@athena.com>
@@ -96,3 +97,7 @@ CMD ["java", "-jar", "/usr/share/myservice/myservice.jar"]
 #ADD target/lib           /usr/share/myservice/lib
 ADD target/application-microbundle.jar /usr/share/myservice/myservice.jar
 ``
+
+The complete solution:
+
+https://info.payara.fish/using-payara-micro-with-docker-guide
