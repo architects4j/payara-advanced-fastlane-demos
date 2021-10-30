@@ -12,7 +12,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.8</payaraVersion>
-        <final.name>docker</final.name>
+        <final.name>application</final.name>
     </properties>
     <dependencies>
         <dependency>
@@ -30,7 +30,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>docker</finalName>
+        <finalName>application</finalName>
     </build>
     <profiles>
         <profile>
@@ -69,7 +69,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <repository>docker.io/kkapelon/docker-maven-comparison</repository>
+                            <repository>docker.io/my/company/docker</repository>
                             <tag>${project.version}</tag>
                         </configuration>
                     </plugin>
