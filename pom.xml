@@ -15,5 +15,6 @@
     <module>jpa</module>
     <module>microstream</module>
     <module>cache</module>
+    <module>nosql</module>
   </modules>
 </project>
