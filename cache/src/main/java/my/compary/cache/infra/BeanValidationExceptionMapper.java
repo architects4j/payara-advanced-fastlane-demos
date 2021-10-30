@@ -1,4 +1,4 @@
-package my.compary.fundamentals.infra;
+package my.compary.cache.infra;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;

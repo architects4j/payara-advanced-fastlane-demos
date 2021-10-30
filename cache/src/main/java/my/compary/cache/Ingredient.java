@@ -1,6 +1,6 @@
-package my.compary.fundamentals;
+package my.compary.cache;
 
-import my.compary.fundamentals.infra.FieldPropertyVisibilityStrategy;
+import my.compary.cache.infra.FieldPropertyVisibilityStrategy;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbVisibility;

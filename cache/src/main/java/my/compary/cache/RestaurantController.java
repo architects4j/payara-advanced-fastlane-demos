@@ -1,4 +1,4 @@
-package my.compary.fundamentals;
+package my.compary.cache;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;

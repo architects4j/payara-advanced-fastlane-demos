@@ -1,4 +1,4 @@
-package my.compary.fundamentals;
+package my.compary.cache;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;

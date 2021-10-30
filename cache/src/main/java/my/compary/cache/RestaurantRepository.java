@@ -1,4 +1,4 @@
-package my.compary.fundamentals;
+package my.compary.cache;
 
 import java.util.Collection;
 import java.util.Optional;

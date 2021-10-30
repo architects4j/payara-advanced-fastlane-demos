@@ -1,4 +1,4 @@
-package my.compary.fundamentals;
+package my.compary.cache;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ApplicationPath;
