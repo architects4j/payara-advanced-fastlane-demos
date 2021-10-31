@@ -96,8 +96,16 @@ CMD ["java", "-jar", "/usr/share/myservice/myservice.jar"]
 # Add Maven dependencies (not shaded into the artifact; Docker-cached)
 #ADD target/lib           /usr/share/myservice/lib
 ADD target/application-microbundle.jar /usr/share/myservice/myservice.jar
-``
+```
 
+```shell
+FROM openjdk:11-jre
+MAINTAINER Aphrodite and Athena <aphrodite@athena.com>
+ENTRYPOINT ["java", "-jar", "/usr/share/myservice/myservice.jar"]
+# Add Maven dependencies (not shaded into the artifact; Docker-cached)
+#ADD target/lib           /usr/share/myservice/lib
+ADD target/application-microbundle.jar /usr/share/myservice/myservice.jar
+```
 The complete solution:
 
 https://info.payara.fish/using-payara-micro-with-docker-guide
