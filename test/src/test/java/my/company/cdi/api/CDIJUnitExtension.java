@@ -1,4 +1,4 @@
-package my.compary.cdi.demo.test;
+package my.company.cdi.api;
 
 
 import org.junit.jupiter.api.extension.AfterAllCallback;
