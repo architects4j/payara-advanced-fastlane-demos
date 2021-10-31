@@ -12,7 +12,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.8</payaraVersion>
-        <final.name>application</final.name>
+        <final.name>ROOT</final.name>
     </properties>
     <dependencies>
         <dependency>
@@ -30,7 +30,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>application</finalName>
+        <finalName>ROOT</finalName>
     </build>
     <profiles>
         <profile>
