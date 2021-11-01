@@ -17,7 +17,7 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutorService;
 
 @RequestScoped
-@Path("reservations/async")
+@Path("restaurants/async")
 public class ReservationAsyncController {
 
     @Inject

@@ -17,7 +17,7 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutorService;
 
 @RequestScoped
-@Path("reservations/")
+@Path("restaurants/")
 public class ReservationController {
 
 
