@@ -38,7 +38,7 @@ public class ReservationAsyncController {
     @Path("countries")
     public CompletionStage<List<String>> getCountries() {
         CompletableFuture<List<String>> future = CompletableFuture
-                .supplyAsync(() -> service.getCountries());
+                .supplyAsync(() -> service.getFoods());
         return future;
     }
 }

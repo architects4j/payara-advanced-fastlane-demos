@@ -36,7 +36,7 @@ public class ReservationController {
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
         cc.setPrivate(true);
-        Response.ResponseBuilder builder = Response.ok(service.getCountries());
+        Response.ResponseBuilder builder = Response.ok(service.getFoods());
         builder.cacheControl(cc);
         return builder.build();
     }
@@ -47,7 +47,7 @@ public class ReservationController {
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
         cc.setPrivate(true);
-        Response.ResponseBuilder builder = Response.ok(service.getCountries());
+        Response.ResponseBuilder builder = Response.ok(service.getFoods());
         builder.cacheControl(cc);
         return builder.build();
     }
