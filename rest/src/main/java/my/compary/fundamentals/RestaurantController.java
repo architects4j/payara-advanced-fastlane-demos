@@ -17,10 +17,9 @@ public class RestaurantController {
     @Inject
     private FakerService service;
 
-    @Path("/cities")
+    @Path("/beers")
     @GET
-    public Response getReservation(@QueryParam("from") String from,
-                               @QueryParam("to") String to) {
+    public Response getBeers() {
 
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
@@ -31,8 +30,8 @@ public class RestaurantController {
     }
 
     @GET
-    @Path("countries")
-    public Response getCountries() {
+    @Path("foods")
+    public Response getFoods() {
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
         cc.setPrivate(true);
@@ -42,7 +41,7 @@ public class RestaurantController {
     }
 
     @TRACE
-    @Path("countries")
+    @Path("foods")
     public Response getTrace() {
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
