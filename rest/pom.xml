@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>my.compary</groupId>
-    <artifactId>reservation</artifactId>
+    <artifactId>restaurant</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <properties>
@@ -12,7 +12,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.8</payaraVersion>
-        <final.name>reservation</final.name>
+        <final.name>restaurant</final.name>
     </properties>
     <dependencies>
         <dependency>
@@ -35,7 +35,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>reservation</finalName>
+        <finalName>restaurant</finalName>
     </build>
     <profiles>
         <profile>
