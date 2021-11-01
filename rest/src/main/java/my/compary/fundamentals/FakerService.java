@@ -2,8 +2,10 @@ package my.compary.fundamentals;
 
 
 import com.github.javafaker.Address;
+import com.github.javafaker.Beer;
 import com.github.javafaker.Country;
 import com.github.javafaker.Faker;
+import com.github.javafaker.Food;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -20,21 +22,21 @@ public class FakerService {
     @Inject
     private Faker faker;
 
-    public List<String> getCities() {
+    public List<Item> getBeers() {
         LOGGER.info("Starting the cities service");
-        List<String> cities = new ArrayList<>();
-        Address address = faker.address();
+        List<Item> beers = new ArrayList<>();
+        Beer beer = faker.beer();
         for (int index = 0; index < 20; index++) {
-            cities.add(address.cityName());
+            beers.add(Item.of(beer));
         }
         waitTwoSeconds();
-        return cities;
+        return beers;
     }
 
     public List<String> getCountries() {
         LOGGER.info("Starting the countries service");
         List<String> countries = new ArrayList<>();
-        Country country = faker.country();
+        Food food = faker.food();
         for (int index = 0; index < 20; index++) {
             countries.add(country.name());
         }

@@ -1,8 +1,6 @@
 package my.compary.fundamentals;
 
 
-import com.github.javafaker.Faker;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -10,7 +8,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -32,7 +29,7 @@ public class ReservationAsyncController {
                                @QueryParam("to") String to,
                                @Suspended AsyncResponse async) {
         executorService.execute(() -> {
-            List<String> cities = service.getCities();
+            List<String> cities = service.getBeers();
             async.resume(cities);
         });
     }
