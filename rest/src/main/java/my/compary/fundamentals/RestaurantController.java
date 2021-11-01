@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 @RequestScoped
 @Path("restaurants/")
-public class ReservationController {
+public class RestaurantController {
 
 
     @Inject
