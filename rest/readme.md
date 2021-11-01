@@ -18,9 +18,9 @@ To execute the tests:
 
 ```
 
-curl --location --request GET 'http://localhost:8080/reservations/cities'
+curl --location --request GET 'http://localhost:8080/restaurants/foods'
 
-curl --location --request GET 'http://localhost:8080/reservations/countries'
+curl --location --request GET 'http://localhost:8080/restaurants/beers'
 ```
 
 
