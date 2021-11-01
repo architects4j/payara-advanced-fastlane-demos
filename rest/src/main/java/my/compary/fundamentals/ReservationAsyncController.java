@@ -23,21 +23,19 @@ public class ReservationAsyncController {
     @Inject
     private FakerService service;
 
-    @Path("/cities")
+    @Path("/beers")
     @GET
-    public void getReservation(@QueryParam("from") String from,
-                               @QueryParam("to") String to,
-                               @Suspended AsyncResponse async) {
+    public void getReservation(@Suspended AsyncResponse async) {
         executorService.execute(() -> {
-            List<String> cities = service.getBeers();
-            async.resume(cities);
+            List<Item> beers = service.getBeers();
+            async.resume(beers);
         });
     }
 
     @GET
     @Path("countries")
-    public CompletionStage<List<String>> getCountries() {
-        CompletableFuture<List<String>> future = CompletableFuture
+    public CompletionStage<List<Item>> getCountries() {
+        CompletableFuture<List<Item>> future = CompletableFuture
                 .supplyAsync(() -> service.getFoods());
         return future;
     }
