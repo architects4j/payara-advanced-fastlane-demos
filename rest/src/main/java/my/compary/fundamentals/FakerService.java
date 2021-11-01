@@ -23,7 +23,7 @@ public class FakerService {
     private Faker faker;
 
     public List<Item> getBeers() {
-        LOGGER.info("Starting the cities service");
+        LOGGER.info("Starting the beers service");
         List<Item> beers = new ArrayList<>();
         Beer beer = faker.beer();
         for (int index = 0; index < 20; index++) {
@@ -33,12 +33,12 @@ public class FakerService {
         return beers;
     }
 
-    public List<String> getCountries() {
-        LOGGER.info("Starting the countries service");
-        List<String> countries = new ArrayList<>();
+    public List<Item> getFoods() {
+        LOGGER.info("Starting the food service");
+        List<Item> countries = new ArrayList<>();
         Food food = faker.food();
         for (int index = 0; index < 20; index++) {
-            countries.add(country.name());
+            countries.add(Item.of(food));
         }
         waitTwoSeconds();
         return countries;
