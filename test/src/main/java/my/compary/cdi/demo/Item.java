@@ -1,2 +1,4 @@
-package my.compary.cdi.demo;public class Item {
+package my.compary.cdi.demo;
+
+public class Item {
 }
