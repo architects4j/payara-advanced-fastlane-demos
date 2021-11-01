@@ -1,6 +1,7 @@
 package my.compary.fundamentals;
 
 import com.github.javafaker.Beer;
+import com.github.javafaker.Food;
 import my.compary.fundamentals.infra.FieldPropertyVisibilityStrategy;
 
 import javax.json.bind.annotation.JsonbVisibility;
@@ -13,14 +14,23 @@ public class Item {
 
     private ItemType type;
 
-    private List<String> ingredients;
+    private String ingredients;
 
     public Item() {
     }
 
-    public static Item of(Beer beer) {
+    private Item(String name, ItemType type, String ingredients) {
+        this.name = name;
+        this.type = type;
+        this.ingredients = ingredients;
+    }
 
-        return null;
+    public static Item of(Beer beer) {
+        return new Item(beer.name(), ItemType.BEVERAGE, beer.style());
+    }
+
+    public static Item of(Food food) {
+        return new Item(food.dish(), ItemType.FOOD, food.ingredient());
     }
 
     @Override
