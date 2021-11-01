@@ -8,10 +8,10 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
     mvn clean package
 ```
-This will create an executable jar file **reservation-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
+This will create an executable jar file **restaurant-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
 ```
-    java -jar target/reservation-microbundle.jar
+    java -jar target/restaurant-microbundle.jar
 ```
 
 To execute the tests:
