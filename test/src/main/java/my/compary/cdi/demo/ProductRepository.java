@@ -1,2 +1,4 @@
-package my.compary.cdi.demo;public interface ProductRepository {
+package my.compary.cdi.demo;
+
+public interface ProductRepository {
 }
