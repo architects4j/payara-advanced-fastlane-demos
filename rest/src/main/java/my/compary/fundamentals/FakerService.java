@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 @ApplicationScoped
 public class FakerService {
 
-    private static Logger LOGGER = Logger.getLogger(FakerService.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(FakerService.class.getName());
 
     @Inject
     private Faker faker;

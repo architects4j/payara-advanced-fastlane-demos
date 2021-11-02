@@ -13,7 +13,7 @@ class RestaurantRepositoryMemory implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryMemory.class.getName());
 
-    private Map<String, Item> data;
+    private final Map<String, Item> data;
 
     public RestaurantRepositoryMemory() {
         this.data = new HashMap<>();
