@@ -18,6 +18,7 @@ public class ProductService {
         if (repository.hasStock(product.getId())) {
             this.service.pay(user, product);
             this.repository.decrementStock(product);
+            return;
         }
         throw new NoItemAvailableException(product);
     }
