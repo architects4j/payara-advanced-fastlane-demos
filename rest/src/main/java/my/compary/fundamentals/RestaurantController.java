@@ -41,6 +41,7 @@ public class RestaurantController {
 
     @PATCH
     @Path("foods")
+    //we could use this annotation @javax.ws.rs.PATCH
     public Response getTrace() {
         CacheControl cc = new CacheControl();
         cc.setMaxAge(5);
