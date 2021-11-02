@@ -14,6 +14,7 @@ public class ProductService {
         this.repository = repository;
     }
 
-    public ProductService() {
-    }
+   public void buy(Product product, User user){
+
+   }
 }
