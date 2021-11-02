@@ -5,7 +5,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.Response;
 
@@ -40,7 +39,7 @@ public class RestaurantController {
         return builder.build();
     }
 
-    @TRACE
+    @PATCH
     @Path("foods")
     public Response getTrace() {
         CacheControl cc = new CacheControl();
