@@ -9,6 +9,5 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @HttpMethod("PATCH")
-//https://httpwg.org/specs/rfc7231.html#TRACE
 public @interface PATCH {
 }
