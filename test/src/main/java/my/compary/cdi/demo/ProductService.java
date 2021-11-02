@@ -19,5 +19,6 @@ public class ProductService {
             this.service.pay(user, product);
             this.repository.decrementStock(product);
         }
+        throw new NoItemAvailableException(product);
     }
 }
