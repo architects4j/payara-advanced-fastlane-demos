@@ -2,6 +2,7 @@ package my.compary.cdi.demo;
 
 import my.company.cdi.api.CDIExtension;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,8 +23,12 @@ class ProductServiceTest {
     @Mock
     private PaymentService paymentService;
 
-    @InjectMocks
     private ProductService service;
+
+    @BeforeEach
+    public void setUp() {
+        this.service = new ProductService(paymentService, repository);
+    }
 
     @Test
     public void test() {
