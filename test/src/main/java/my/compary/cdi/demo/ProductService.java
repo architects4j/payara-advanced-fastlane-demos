@@ -14,7 +14,8 @@ public class ProductService {
         this.repository = repository;
     }
 
-   public void buy(Product product, User user){
-
-   }
+    public void buy(Product product, User user) {
+        if (repository.hasStock(product.getId())) {
+        }
+    }
 }
