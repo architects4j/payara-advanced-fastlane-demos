@@ -1,22 +1,14 @@
 package my.compary.cdi.demo;
 
-import javax.annotation.Priority;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Default;
-import javax.interceptor.Interceptor;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-@Default
-@Priority(Interceptor.Priority.APPLICATION)
-@ApplicationScoped
-public class MockProductRepository implements ProductRepository {
-
+public class MemoryProductRepository implements ProductRepository {
     private final Map<Long, Product> data;
 
-    public MockProductRepository() {
+    public MemoryProductRepository() {
         this.data = new HashMap<>();
     }
 
@@ -35,5 +27,12 @@ public class MockProductRepository implements ProductRepository {
     @Override
     public boolean hasStock(Long id) {
         return findById(id).isPresent();
+    }
+
+    @Override
+    public String toString() {
+        return "MemoryProductRepository{" +
+                "data=" + data +
+                '}';
     }
 }
