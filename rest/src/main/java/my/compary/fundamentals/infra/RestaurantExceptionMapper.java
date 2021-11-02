@@ -30,5 +30,17 @@ public class RestaurantExceptionMapper implements ExceptionMapper<RestaurantExce
             this.name = "Error name";
             this.description = "This is a sample of error message description";
         }
+
+        public Long getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
     }
 }
