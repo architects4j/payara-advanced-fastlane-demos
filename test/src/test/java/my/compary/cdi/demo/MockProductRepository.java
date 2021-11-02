@@ -1,10 +1,12 @@
 package my.compary.cdi.demo;
 
+import javax.enterprise.inject.Default;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+@Default
 public class MockProductRepository implements ProductRepository {
 
     private final Map<Long, Product> data;
