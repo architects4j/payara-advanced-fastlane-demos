@@ -16,6 +16,12 @@ public class RestaurantController {
     @Inject
     private FakerService service;
 
+    @Path("/exception")
+    @GET
+    public Response getError() {
+        throw new RestaurantException();
+    }
+
     @Path("/beers")
     @GET
     public Response getBeers() {
