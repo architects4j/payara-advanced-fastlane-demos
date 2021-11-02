@@ -30,6 +30,11 @@ public class MemoryProductRepository implements ProductRepository {
     }
 
     @Override
+    public void decrementStock(Product product) {
+
+    }
+
+    @Override
     public String toString() {
         return "MemoryProductRepository{" +
                 "data=" + data +

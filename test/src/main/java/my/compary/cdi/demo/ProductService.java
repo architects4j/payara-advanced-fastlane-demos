@@ -16,6 +16,8 @@ public class ProductService {
 
     public void buy(Product product, User user) {
         if (repository.hasStock(product.getId())) {
+            this.service.pay(user, product);
+            this.repository.decrementStock(product);
         }
     }
 }

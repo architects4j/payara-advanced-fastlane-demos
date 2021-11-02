@@ -27,7 +27,7 @@ class ProductServiceTest {
 
     @BeforeEach
     public void setUp() {
-        this.service = new ProductService(paymentService, repository);
+      this.service = new ProductService(paymentService, repository);
     }
 
     @Test

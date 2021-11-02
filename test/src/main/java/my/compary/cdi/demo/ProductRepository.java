@@ -9,4 +9,6 @@ public interface ProductRepository {
     Optional<Product> findById(Long id);
 
     boolean hasStock(Long id);
+
+    void decrementStock(Product product);
 }
