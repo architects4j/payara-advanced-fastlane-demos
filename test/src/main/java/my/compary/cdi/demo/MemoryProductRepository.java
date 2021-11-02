@@ -2,7 +2,7 @@ package my.compary.cdi.demo;
 
 import java.util.Optional;
 
-public class MemoryProductRepository implements ProductRepository{
+public class MemoryProductRepository implements ProductRepository {
     @Override
     public void save(Product product) {
         throw new UnsupportedOperationException("It is not supported Yet");
