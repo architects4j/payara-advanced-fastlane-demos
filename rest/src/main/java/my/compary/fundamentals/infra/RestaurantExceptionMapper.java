@@ -2,7 +2,6 @@ package my.compary.fundamentals.infra;
 
 import my.compary.fundamentals.RestaurantException;
 
-import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;

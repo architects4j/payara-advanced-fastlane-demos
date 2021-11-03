@@ -1,6 +1,5 @@
 package my.compary.restaurant.infra;
 
-import my.compary.restaurant.Items;
 import one.microstream.storage.types.StorageManager;
 
 import javax.annotation.Priority;

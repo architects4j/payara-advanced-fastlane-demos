@@ -17,7 +17,6 @@
 package jakarta.nosql.demo;
 
 
-import org.eclipse.jnosql.mapping.graph.EntityTree;
 import org.eclipse.jnosql.mapping.graph.GraphTemplate;
 
 import javax.enterprise.inject.se.SeContainer;

@@ -1,9 +1,7 @@
 package my.compary.fundamentals;
 
 
-import com.github.javafaker.Address;
 import com.github.javafaker.Beer;
-import com.github.javafaker.Country;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Food;
 

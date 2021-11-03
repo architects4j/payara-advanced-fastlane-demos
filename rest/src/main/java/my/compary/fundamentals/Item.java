@@ -5,7 +5,6 @@ import com.github.javafaker.Food;
 import my.compary.fundamentals.infra.FieldPropertyVisibilityStrategy;
 
 import javax.json.bind.annotation.JsonbVisibility;
-import java.util.List;
 
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
 public class Item {

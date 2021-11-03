@@ -53,6 +53,6 @@ public class ProductRepositoryJPA extends AbstractFacade<Product> implements Pro
     @Override
     public void deleteById(Long id) {
         Optional<Product> item = findById(id);
-        item.ifPresent((i) -> super.remove(i));
+        item.ifPresent(super::remove);
     }
 }
