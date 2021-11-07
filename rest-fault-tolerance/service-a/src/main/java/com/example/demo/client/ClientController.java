@@ -1,5 +1,6 @@
 package com.example.demo.client;
 
+import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -26,10 +27,15 @@ public class ClientController {
     @Retry( maxRetries = 3,
             delay = 2, delayUnit = ChronoUnit.SECONDS,
             jitter = 0, jitterDelayUnit = ChronoUnit.SECONDS)
+    @Fallback(fallbackMethod= "fallbackService")
     @Timeout(500)
     public String onClientSide(@PathParam("parameter") String parameter) {
         System.out.println("Invoking client at "+ LocalTime.now());
         return service.doSomething(parameter);
+    }
+
+    private String fallbackService(String parameter) {
+        return "The service B invocation failed, here's a fallback message for you.";
     }
 
 }
