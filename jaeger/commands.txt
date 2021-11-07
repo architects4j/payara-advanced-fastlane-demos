@@ -1,0 +1,10 @@
+##
+
+docker-compose up -d
+
+curl http://localhost:8080/data/service1
+
+
+http://localhost:16686/search
+
+Docker-compose down
