@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class DatabaseTest {
 
     @Container
-    private static final MySQLContainer MY_SQL_CONTAINER = new MySQLContainer("5.7.34");
+    private static final MySQLContainer MY_SQL_CONTAINER = new MySQLContainer();
 
     // will be started before and stopped after each test method
     @Container
